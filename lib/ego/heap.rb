@@ -19,5 +19,10 @@ module EGO
     def [](address)
       raise NotImplementedError
     end
+
+    # ヒープ内のオブジェクトすべて対する処理
+    def obj_visit(&block)
+      raise NotImplementedError
+    end
   end
 end

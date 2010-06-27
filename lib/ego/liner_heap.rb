@@ -11,6 +11,17 @@ module EGO
       return address
     end
 
+    # オブジェクト取得
+    def [](address)
+      @objects[address]
+    end
+
+    def obj_visit(&block)
+      @objects.each_with_index do |o, i|
+        block.call(o, @objects, i)
+      end
+    end
+
     private
     def empty_address
       @objects.each_with_index do |o, i|
