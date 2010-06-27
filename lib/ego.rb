@@ -1,4 +1,5 @@
 # the egoism gc for eco!!
+
 module EGO
   class GC
     attr_reader :heap
@@ -24,8 +25,8 @@ module EGO
       return @root_blocks.map{|rb| rb.call }.flatten
     end
   end
-end
 
-require "ego/mark_sweep"
-require "ego/heap"
-require "ego/liner_heap"
+  autoload :Heap, "ego/heap"
+  autoload :LinerHeap, "ego/liner_heap"
+  autoload :MarkSweep, "ego/mark_sweep"
+end
